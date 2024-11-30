@@ -1,16 +1,17 @@
 #include <fstream>
 #include <iostream>
+
 using namespace std;
 int main()
 {
     cout << "\033[2J\033[1;1H";
     ifstream bank;
-    bank.open("C:\\develop\\Home_Work_GB\\C++Advanced_topics\\Lesson_1_Opening_files\\Lesson_1_Home_Work\\words.txt", ios::binary);
+    bank.open("C:\\develop\\Home_Work_GB\\C++Advanced_topics\\Lesson_1_Opening_files\\Lesson_1_Home_Work\\words.txt", ios::binary | ios::ate);
     string key_word;
     cout << "Input word for searching: ";
     cin >> key_word;
     int len_kw = key_word.length ();
-    bank.seekg(0, ios::end);
+    // bank.seekg(0, ios::end);
     int len_f = bank.tellg();
     char buffer[len_kw];
     int count_cs_w = 0;
